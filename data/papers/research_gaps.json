@@ -1,0 +1,86 @@
+[
+    {
+        "research_problem": "Defining the necessary components and criteria for constructing an Artificial Scientist capable of independently conducting research that meets the standards of a Nobel‑prize‑winning contribution, and clarifying the theoretical and practical requirements for such an AI system.",
+        "methodology": "The paper surveys existing concepts (e.g., Goertzel’s Artificial Scientist Test, Physical Symbol System Hypothesis), proposes a set of minimal requirements for scientific hypotheses (falsifiability, causal structure), frames experimentation in terms of expected utility, distinguishes logicist/symbolic approaches, and references the theoretical AIXI agent as an optimal decision‑making model that maps situations to responses to maximize reward across environments.",
+        "limitations": "The discussion remains largely conceptual with no concrete implementation or empirical validation; it relies on idealized agents like AIXI that are incomputable in practice; the focus on logicist, symbol‑based methods may overlook recent advances in neural and hybrid approaches; and the paper does not address practical constraints such as data availability, computational cost, or ethical considerations of autonomous scientific discovery.",
+        "research_gaps": [
+            "Lack of empirical experiments demonstrating an AI system that can generate falsifiable, Nobel‑level hypotheses.",
+            "Insufficient integration of modern deep learning or neuro‑symbolic techniques with the proposed logicist framework.",
+            "No concrete methodology for estimating expected utility of experiments in real scientific domains.",
+            "Absence of discussion on how to handle incomplete or noisy data, which is common in scientific research.",
+            "Limited exploration of safety, accountability, and ethical implications of autonomous scientific agents."
+        ],
+        "future_work": [
+            "Develop and benchmark prototype AI scientist systems that combine symbolic reasoning with contemporary machine‑learning models.",
+            "Create realistic utility‑based evaluation metrics for experimental design and hypothesis testing in specific scientific fields.",
+            "Investigate scalable approximations of the AIXI optimality principle that are computationally tractable.",
+            "Explore frameworks for ensuring transparency, reproducibility, and ethical oversight of AI‑generated scientific discoveries.",
+            "Conduct interdisciplinary case studies to assess the AI scientist’s performance against human experts in targeted research problems."
+        ],
+        "file_name": "paper_1.pdf"
+    },
+    {
+        "research_problem": "Understanding and mitigating the fundamental difficulties in communicating with and controlling a super‑intelligent artificial general intelligence (AGI), especially when its decision‑making processes are expressed as highly compressed signals that appear as random noise to human observers.",
+        "methodology": "The paper conducts a conceptual and theoretical analysis that integrates the Fermi Paradox, symbol emergence theory, and information‑theoretic notions of compression. It argues that as signals become more compressed they approach randomness, making intent inference impossible without a proper decoder. The authors propose framing desired sensorimotor states as constraints and defining “intensional solutions” (weak, general solutions) as a way to express intent, then discuss how an AGI might generate ultra‑compressed rationales that are uninterpretable to humans.",
+        "limitations": "The work is purely speculative and lacks empirical data or concrete algorithms. It assumes specific relationships between compression, randomness, and interpretability without experimental validation. The proposed notions of intent and intensional solutions are not operationalized, and the paper does not provide a concrete decoding or safety framework for real‑world AGI systems.",
+        "research_gaps": [
+            "Absence of practical decoding mechanisms to translate ultra‑compressed AGI signals into human‑readable explanations.",
+            "No quantitative metrics for measuring the degree of compression versus interpretability in AGI communication.",
+            "Lack of experimental or simulation studies to test the hypothesized link between compression, randomness, and loss of intent inference."
+        ],
+        "future_work": [
+            "Develop and test algorithmic decoders capable of reconstructing meaning from highly compressed AGI outputs.",
+            "Create benchmark datasets and metrics to evaluate the trade‑off between signal compression and human interpretability.",
+            "Design controlled experiments or simulations to validate the intensional‑solution framework and assess its effectiveness for safe AGI alignment."
+        ],
+        "file_name": "paper_2.pdf"
+    },
+    {
+        "research_problem": "The paper addresses the lack of a unified taxonomy and formal framework for Creative Problem Solving (CPS) in autonomous systems, aiming to clarify existing approaches, identify gaps, and guide future research on how AI agents can generate, execute, and learn strategies for solving off‑nominal, real‑world problems.",
+        "methodology": "The authors conduct a literature survey of CPS and Computational Creativity (CC) works, propose a novel formalization of CPS, and introduce a hierarchical framework that categorizes approaches by the type of conceptual space they modify (state vs. action) and by their representation (symbolic, non‑symbolic, hybrid) and reasoning mode (exploratory, transformational, planning). They illustrate the taxonomy with examples from recent studies.",
+        "limitations": "The survey is primarily descriptive and does not provide empirical validation of the proposed taxonomy; it relies on a limited set of cited works, potentially overlooking emerging domains; the formalization remains high‑level, lacking concrete metrics for evaluating CPS performance or creativity; and the framework does not address scalability to large‑scale, real‑time environments.",
+        "research_gaps": [
+            "Absence of standardized benchmarks and evaluation metrics for measuring CPS effectiveness and creativity across domains.",
+            "Limited integration of multimodal perception and embodied interaction in existing CPS models.",
+            "Insufficient understanding of how to combine symbolic reasoning with deep learning for transformational problem solving."
+        ],
+        "future_work": [
+            "Develop and release open‑source benchmark suites that capture off‑nominal, time‑critical scenarios for CPS evaluation.",
+            "Design embodied CPS agents that fuse sensory modalities (vision, haptics, language) to enrich state‑space representations.",
+            "Create hybrid architectures that seamlessly blend symbolic planning, reinforcement learning, and generative models to enable transformational creativity in complex tasks."
+        ],
+        "file_name": "paper_3.pdf"
+    },
+    {
+        "research_problem": "The lack of clear explainability and formalization in the use of Explainable AI (XAI) models, particularly in healthcare, leading to moral, practical, and deployment challenges.",
+        "methodology": "A systematic literature review using Boolean operators (OR, AND) to identify and evaluate 450 papers on XAI, narrowing to 195 for inclusion and 110 for performance analysis, with a focus on distinguishing XAI from interpretability and assessing its implications in healthcare applications.",
+        "limitations": "The review excluded papers on fundamental scientific, epidemiological, or clinical aspects of XAI, potentially biasing the sample; reliance on keyword searches may miss relevant studies; limited quantitative synthesis of performance results; and the analysis remains largely descriptive without empirical validation.",
+        "research_gaps": [
+            "Insufficient empirical studies linking XAI explanations to clinical decision outcomes and patient safety.",
+            "Lack of standardized metrics and benchmarks for evaluating XAI performance in healthcare contexts.",
+            "Sparse investigation of the ethical and regulatory implications of XAI deployment in real-world medical settings."
+        ],
+        "future_work": [
+            "Conduct controlled experiments to measure how XAI explanations affect clinician trust, diagnostic accuracy, and treatment decisions.",
+            "Develop and adopt unified evaluation frameworks and datasets for benchmarking XAI methods across diverse medical domains.",
+            "Explore governance models, ethical guidelines, and regulatory pathways to ensure responsible integration of XAI into healthcare workflows."
+        ],
+        "file_name": "paper_4.pdf"
+    },
+    {
+        "research_problem": "The paper addresses the difficulty of making optimal, cost‑effective treatment decisions in modern healthcare due to rising complexity, fragmented information, and a long lag between research findings and clinical practice, seeking a general‑purpose AI framework that can learn from electronic health record (EHR) data and support sequential decision‑making across diseases.",
+        "methodology": "The authors propose a computational framework that combines Markov Decision Processes (MDPs) and Partially Observable MDPs (POMDPs) with dynamic decision networks to model sequential treatment decisions, maintain belief states for noisy or missing observations, and optimize clinical utility (outcomes and costs). The system is designed to be embedded in clinical workflows, continuously learning from real‑world EHR data, and is evaluated using patient data to test its ability to approximate optimal clinician decisions.",
+        "limitations": "The study is limited to a proof‑of‑concept implementation without extensive validation across multiple disease domains, relies on the quality and completeness of existing EHR data, may face scalability challenges for high‑dimensional state spaces, and does not yet address integration with existing electronic health systems or regulatory/ethical considerations.",
+        "research_gaps": [
+            "Lack of comprehensive empirical evaluation across diverse clinical settings and disease types.",
+            "Insufficient handling of high‑dimensional patient data and computational scalability of POMDP solutions.",
+            "Limited discussion of real‑time integration, user interface design, and clinician acceptance in practice."
+        ],
+        "future_work": [
+            "Incorporate advanced machine‑learning techniques (e.g., deep reinforcement learning) to improve scalability and personalization.",
+            "Conduct large‑scale prospective trials to validate clinical utility, cost‑effectiveness, and safety across multiple specialties.",
+            "Develop seamless integration pipelines with EHR systems, address regulatory compliance, and design clinician‑centered decision‑support interfaces."
+        ],
+        "file_name": "paper_5.pdf"
+    }
+]

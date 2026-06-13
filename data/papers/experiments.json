@@ -1,0 +1,106 @@
+[
+    {
+        "experiment_title": "Neuro‑Symbolic Autonomous Scientist for Falsifiable Hypothesis Generation and Experiment Planning",
+        "objective": "Assess whether a modular neuro‑symbolic AI system (LM‑based literature encoder + differentiable theorem prover + RL experiment planner) can autonomously generate falsifiable, high‑impact scientific hypotheses and propose experiments with expected utility comparable to expert human scientists on benchmark discovery tasks.",
+        "dataset": "A curated multi‑domain benchmark suite comprising (a) a materials‑science dataset (Materials Project + literature abstracts) for discovering novel stable compounds, (b) a drug‑target discovery dataset (ChEMBL bioactivity + PubMed abstracts) for proposing protein‑ligand hypotheses, and (c) a synthetic biology pathway dataset (MetaCyc reactions + related papers) for metabolic‑engineering hypotheses. Each domain provides (i) a corpus of scientific text, (ii) a knowledge graph of entities/relations, and (iii) a simulated experimental environment (physics‑based property predictor for materials, docking scores for drugs, flux balance analysis for pathways).",
+        "baseline": "Separate state‑of‑the‑art baselines per module: (1) literature‑only hypothesis generation using GPT‑4/Claude with prompt engineering, (2) symbolic hypothesis generation using pure ILP/AMIE, (3) experiment selection via Bayesian optimization over the same simulators, and (4) a human‑expert panel performing the same tasks on a subset of the benchmarks.",
+        "proposed_method": "A four‑component neuro‑symbolic pipeline:\n1. **Literature Encoder** – Fine‑tuned large language model (e.g., Llama‑2‑70B) that ingests abstracts/full‑texts and outputs a probabilistic causal graph (entities, directed relations, confidence scores).\n2. **Differentiable Logic Engine** – Neural theorem prover (e.g., DeepLogic or NeuroSAT) that receives the causal graph and constructs candidate first‑order logic hypotheses, performs differentiable falsifiability checks against known axioms and the simulated data, and returns a falsifiability score.\n3. **Utility Estimator** – Graph neural network trained on historical experiment outcomes to predict expected information gain (KL‑divergence) and cost of a proposed intervention.\n4. **RL Planner** – Model‑based reinforcement learning (PPO) that selects hypothesis–experiment pairs maximizing a reward = α·expected information gain – β·experimental cost, using the simulator for roll‑outs.\nThe system is trained end‑to‑end with a multi‑task loss combining (i) language‑model reconstruction, (ii) logical consistency, (iii) utility prediction error, and (iv) RL return.",
+        "evaluation_metrics": [
+            "Falsifiability Precision@k – proportion of top‑k generated hypotheses that are provably falsifiable within the simulated domain.",
+            "Discovery Impact – improvement in target metric (e.g., material stability, binding affinity, pathway yield) relative to baseline after executing the top‑k planned experiments.",
+            "Human‑Expert Equivalence – normalized score (0–1) comparing system’s combined hypothesis‑experiment utility to that of senior domain scientists on the same tasks.",
+            "Sample Efficiency – number of simulated experiments required to reach a predefined performance threshold."
+        ],
+        "expected_outcome": "The neuro‑symbolic system will generate falsifiable hypotheses with >70% precision in the top‑10 list and propose experiments that achieve ≥80% of the performance gain obtained by human experts while using ≤50% of the experimental budget, thereby validating the hypothesis that integrated differentiable reasoning and large‑scale language models can autonomously conduct high‑impact scientific discovery.",
+        "risk_factors": [
+            "Difficulty in reliably extracting accurate causal graphs from noisy literature, which may propagate errors to downstream logical reasoning.",
+            "Computational cost and instability of training differentiable theorem provers jointly with large language models, potentially leading to convergence issues."
+        ],
+        "file_name": "paper_1.pdf"
+    },
+    {
+        "experiment_title": "Dual‑Channel AGI Output: Decoding Ultra‑Compressed Signals via a Mutual‑Information Optimized Auxiliary Stream",
+        "objective": "To test whether a jointly trained auxiliary output channel, optimized for mutual information with a human‑interpretable latent space, can reliably reconstruct the intent behind an ultra‑compressed primary AGI signal while preserving task performance.",
+        "dataset": "Synthetic multi‑modal benchmark suite (Mini‑Grid, ProcGen, and a language reasoning suite) augmented with human‑annotated intent labels and a curated latent dictionary of interpretable concepts (e.g., action primitives, goal predicates, visual symbols).",
+        "baseline": "Standard single‑channel AGI model trained solely on task loss (e.g., PPO or transformer policy) producing only the ultra‑compressed primary output; plus a post‑hoc decoder trained separately on the primary channel using supervised mapping.",
+        "proposed_method": "A dual‑channel architecture where the primary head outputs a high‑entropy, ultra‑compressed token stream (e.g., 8‑bit logits) optimized for task reward, while a parallel auxiliary head outputs a lower‑dimensional vector sequence. The training loss combines (1) task reward loss, (2) a KL‑based compression penalty on the primary channel, and (3) a mutual‑information regularizer (InfoNCE) between the auxiliary output and a fixed human‑interpretable latent space (concept embeddings). The auxiliary head is also supervised with a small set of human‑provided concept annotations to anchor semantics.",
+        "evaluation_metrics": [
+            "Task Performance (average episode return) – to ensure primary channel efficacy is unchanged.",
+            "Compression Ratio (bits per decision) of primary channel vs. baseline.",
+            "Mutual Information (estimated via k‑NN or MINE) between auxiliary output and human concept space.",
+            "Human Decoding Accuracy: percentage of correctly inferred intents from auxiliary sequences in a timed user study.",
+            "Reconstruction Fidelity: KL divergence between original intent distribution and human‑reconstructed distribution using auxiliary channel."
+        ],
+        "expected_outcome": "The dual‑channel model will maintain task performance within 2 % of the baseline while achieving a ≥4× compression on the primary channel. The auxiliary channel will exhibit high mutual information (I > 0.8 bits per dimension) with the concept space, enabling participants to decode intent with >85 % accuracy and a mean reconstruction loss comparable to the supervised post‑hoc decoder, thereby validating the hypothesis.",
+        "risk_factors": [
+            "Mode collapse where the auxiliary channel learns to mirror the primary channel, reducing interpretability.",
+            "Human concept dictionary may be insufficiently expressive, leading to low decoding accuracy despite high mutual information.",
+            "Computational overhead of mutual‑information regularization could limit scalability to larger AGI models."
+        ],
+        "file_name": "paper_2.pdf"
+    },
+    {
+        "experiment_title": "Hybrid Symbolic‑Neural Transformation for Embodied Creative Problem Solving (HySNeCPS)",
+        "objective": "To assess whether embedding a hybrid symbolic‑planner + neural generative transformation module in an embodied robot improves both problem‑solving success and creativity (novelty, usefulness, surprise) on a newly created multimodal Creative Problem Solving (CPS) benchmark compared to purely symbolic and purely neural baselines.",
+        "dataset": "Multimodal CPS Benchmark Suite (M-CPS): 12 off‑nominal tasks performed in a physical lab and high‑fidelity simulation (e.g., broken‑bridge reconstruction, adaptive tool‑fabrication, multi‑object sorting under occlusion, dynamic obstacle navigation). Each task provides synchronized RGB‑D, audio, haptic, and proprioceptive streams and a structured symbolic description of the environment.",
+        "baseline": [
+            "Pure Symbolic: Hierarchical Task Network (HTN) planner with hand‑crafted perception pipelines.",
+            "Pure Neural: End‑to‑end transformer‑based policy (vision‑language‑action) trained via imitation + reinforcement learning."
+        ],
+        "proposed_method": "Hybrid Transformation Architecture: (1) Symbolic Planner generates candidate high‑level action sequences using a domain ontology; (2) Neural Generative Model (VAE‑GPT hybrid) refines each symbolic step into concrete motor commands and multimodal sensory transformations; (3) Tight runtime coupling via a belief‑state updater that merges symbolic predicates with neural latent embeddings, enabling on‑the‑fly replanning under perception noise.",
+        "evaluation_metrics": [
+            "Problem‑Solving Success Rate (percentage of tasks completed within time/energy budget).",
+            "Creativity Score = weighted sum of Novelty, Usefulness, and Surprise, each computed via established metrics (e.g., distance in latent space for novelty, task‑relevance scoring for usefulness, and Bayesian surprise of outcome vs. prior).",
+            "Efficiency Measures: wall‑clock time, computational load, and number of replanning cycles.",
+            "Human Expert Rating: blind assessment of robot solutions on creativity dimensions (Likert 1‑5)."
+        ],
+        "expected_outcome": "The hybrid HySNeCPS agent will achieve a statistically significant increase (p < 0.05, Cohen's d > 0.8) in overall Creativity Score and a higher success rate (≈15‑20% improvement) over both baselines, while maintaining comparable efficiency, thereby validating the advantage of tightly coupled symbolic‑neural transformations for embodied creative problem solving.",
+        "risk_factors": [
+            "Integration complexity may cause latency that violates real‑time constraints, reducing task success.",
+            "Metric reliability: quantifying novelty and surprise in physical domains may be noisy; mitigation includes multiple human raters and bootstrap validation."
+        ],
+        "file_name": "paper_3.pdf"
+    },
+    {
+        "experiment_title": "Randomized Controlled Trial of Counterfactual vs. Confidence‑Score Explanations for AI‑Assisted Diagnosis in Acute Care",
+        "objective": "To determine whether counterfactual explanations generated by a clinically validated XAI system improve physicians' diagnostic accuracy and reduce patient safety adverse events compared with standard confidence‑score explanations.",
+        "dataset": "Prospective patient cohort presenting to the Emergency Department with suspected acute respiratory infection, collected over 6 months (≈3,000 encounters). Each case includes: (1) raw clinical data (vitals, labs, imaging), (2) ground‑truth diagnosis confirmed by expert panel, (3) AI diagnostic aid output (probability distribution over diagnoses) with either counterfactual or confidence‑score explanation, and (4) follow‑up safety outcomes (e.g., 30‑day readmission, medication error, mortality).",
+        "baseline": "Standard AI assistance providing only a confidence score (probability) for the top‑ranked diagnosis without any additional explanation.",
+        "proposed_method": "Integrate a state‑of‑the‑art counterfactual explanation module into the AI diagnostic aid. For each suggested diagnosis, the system presents a minimal set of feature changes (e.g., “If white‑blood‑cell count were ≤ 8 ×10⁹/L, the diagnosis would change from bacterial pneumonia to viral bronchitis”). Clinicians in the intervention arm receive these counterfactuals; clinicians in the control arm receive only the confidence score.",
+        "evaluation_metrics": [
+            "Primary: Diagnostic accuracy (proportion of cases where clinician’s final diagnosis matches the expert‑panel reference).",
+            "Secondary: Decision time (seconds from AI output to clinician’s final decision).",
+            "Patient safety: Composite adverse event rate within 30 days (including missed diagnosis, inappropriate treatment, readmission, mortality).",
+            "Explainability usability: System Usability Scale (SUS) and NASA‑TLX workload scores collected post‑encounter."
+        ],
+        "expected_outcome": "Clinicians exposed to counterfactual explanations will achieve statistically higher diagnostic accuracy (↑5‑7 %), shorter decision times (↓10‑15 %), and a lower composite adverse‑event rate (↓8‑10 %) relative to the confidence‑score group, demonstrating a causal link between explanation modality and clinical outcomes.",
+        "risk_factors": [
+            "Potential over‑reliance on AI suggestions leading to automation bias.",
+            "Variability in clinicians’ familiarity with counterfactual reasoning may affect usability and learning curves."
+        ],
+        "file_name": "paper_4.pdf"
+    },
+    {
+        "experiment_title": "Hierarchical Deep‑Latent POMDP for Real‑Time Multimodal Treatment Decision Support",
+        "objective": "To assess whether a hierarchical POMDP that consumes low‑dimensional latent states learned by a variational autoencoder (VAE) from high‑dimensional, multimodal EHR data can generate optimal treatment recommendations in real time without degrading clinical fidelity.",
+        "dataset": "MIMIC‑IV ICU cohort (≈ 400,000 ICU stays) augmented with linked imaging (Chest X‑ray) and genomics (exome sequencing) for a sub‑cohort of 5,000 patients; data streams include vitals, labs, medication orders, radiology reports, raw DICOM images, and variant call files.",
+        "baseline": [
+            "Standard POMDP using handcrafted summary features (e.g., SOFA, APACHE scores) as belief states.",
+            "End‑to‑end deep reinforcement learning (e.g., DQN) directly on concatenated raw features.",
+            "Static clinical guidelines (e.g., Surviving Sepsis Campaign) applied as rule‑based policy."
+        ],
+        "proposed_method": "A three‑level hierarchical architecture: (1) Modality‑specific encoders (CNN for images, 1‑D CNN/Transformer for time‑series labs & vitals, feed‑forward net for genomics) feeding into a shared VAE that learns a 32‑dim latent patient state; (2) A belief update module that treats the VAE latent posterior as the POMDP belief and updates it with Bayes‑optimal filtering; (3) A hierarchical POMDP solver where a high‑level policy selects treatment goals (e.g., hemodynamic stabilization, infection control) and a low‑level policy selects concrete actions (fluid bolus, vasopressor dose). Inference is performed with point‑based value iteration accelerated on GPU to meet ≤200 ms per decision cycle.",
+        "evaluation_metrics": [
+            "Clinical effectiveness: In‑hospital mortality, length of stay, and proportion of guideline‑concordant interventions.",
+            "Computational performance: Average decision latency (ms) and GPU/CPU utilization per patient hour.",
+            "Representation fidelity: Reconstruction error of VAE (RMSE) and KL divergence; correlation of latent dimensions with known clinical scores.",
+            "Policy optimality: Expected cumulative reward under a clinically validated reward model compared to baselines."
+        ],
+        "expected_outcome": "The latent‑POMDP will achieve decision latencies <200 ms (≈10× faster than full‑state POMDP), maintain or improve mortality and LOS relative to baselines, and demonstrate that the compressed latent belief retains clinically relevant information (high correlation with SOFA/APACHE). This will validate the scalability of deep‑augmented hierarchical POMDPs for bedside decision support.",
+        "risk_factors": [
+            "Potential loss of critical rare‑event information during latent compression, leading to unsafe recommendations.",
+            "Integration challenges with real‑time EHR streaming and latency spikes in a production sandbox."
+        ],
+        "file_name": "paper_5.pdf"
+    }
+]

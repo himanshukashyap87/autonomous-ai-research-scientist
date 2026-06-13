@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "agent": "search_agent",
+    "timestamp": "2026-06-03T13:36:41.488141",
+    "topic": "Aid Disease",
+    "paper_count": 5,
+    "status": "success"
+  },
+  "data": [
+    {
+      "title": "How reproducible are data-driven subtypes of Alzheimer's disease atrophy?",
+      "authors": [
+        "Emma Prevot",
+        "Cameron Shand",
+        "Neil Oxtoby",
+        "for Alzheimer's Disease Neuroimaging Initiative"
+      ],
+      "summary": "Alzheimer's disease (AD) exhibits substantial clinical and biological heterogeneity, complicating efforts in treatment and intervention development. While new computational methods offer insights into AD progression, the reproducibility of these subtypes across datasets remains understudied, particularly concerning the robustness of subtype definitions when validated on diverse databases. This study evaluates the consistency of AD progression subtypes identified by the Subtype and Stage Inference (SuStaIn) algorithm using T1-weighted MRI data across 5,444 subjects from ANMerge, OASIS, and ADNI datasets, forming four independent cohorts. Each cohort was analyzed under two conditions: one using the full cohort, including cognitively normal controls, and another excluding controls to test subtype robustness. Results confirm the three primary atrophy subtypes identified in earlier studies: Typical, Cortical, and Subcortical, as well as the emergence of rare and atypical AD variants such as posterior cortical atrophy (PCA). Notably, each subtype displayed varying robustness to the inclusion of controls, with certain subtypes, like Subcortical, more influenced by cohort composition. This investigation underscores SuStaIn's reliability for defining stable AD subtypes and suggests its utility in clinical stratification for trials and diagnosis. However, our findings also highlight the need for improved dataset diversity, particularly in terms of ethnic representation, to enhance generalizability and support broader clinical application.",
+      "pdf_url": "https://arxiv.org/pdf/2412.00160v1"
+    },
+    {
+      "title": "Self-organized clustering, prediction, and superposition of long-term cognitive decline from short-term individual cognitive test scores in Alzheimer's disease",
+      "authors": [
+        "Hiroyuki Sato",
+        "Keisuke Suzuki",
+        "Atsushi Hashizume",
+        "Ryoichi Hanazawa",
+        "Masanao Sasaki",
+        "Akihiro Hirakawa",
+        "the Japanese Alzheimer's Disease Neuroimaging Initiative",
+        "the Alzheimer's Disease Neuroimaging Initiative"
+      ],
+      "summary": "Progressive cognitive decline spanning across decades is characteristic of Alzheimer's disease (AD). Various predictive models have been designed to realize its early onset and study the long-term trajectories of cognitive test scores across populations of interest. Research efforts have been geared towards superimposing patients' cognitive test scores with the long-term trajectory denoting gradual cognitive decline, while considering the heterogeneity of AD. Multiple trajectories representing cognitive assessment for the long-term have been developed based on various parameters, highlighting the importance of classifying several groups based on disease progression patterns. In this study, a novel method capable of self-organized prediction, classification, and the overlay of long-term cognitive trajectories based on short-term individual data was developed, based on statistical and differential equation modeling. We validated the predictive accuracy of the proposed method for the long-term trajectory of cognitive test score results on two cohorts: the Alzheimer's Disease Neuroimaging Initiative (ADNI) study and the Japanese ADNI study. We also presented two practical illustrations of the simultaneous evaluation of risk factor associated with both the onset and the longitudinal progression of AD, and an innovative randomized controlled trial design for AD that standardizes the heterogeneity of patients enrolled in a clinical trial. These resources would improve the power of statistical hypothesis testing and help evaluate the therapeutic effect. The application of predicting the trajectory of longitudinal disease progression goes beyond AD, and is especially relevant for progressive and neurodegenerative disorders.",
+      "pdf_url": "https://arxiv.org/pdf/2402.12205v1"
+    },
+    {
+      "title": "High-dimensional regression over disease subgroups",
+      "authors": [
+        "Frank Dondelinger",
+        "Sach Mukherjee",
+        "The Alzheimer's Disease Neuroimaging Initiative"
+      ],
+      "summary": "We consider high-dimensional regression over subgroups of observations. Our work is motivated by biomedical problems, where disease subtypes, for example, may differ with respect to underlying regression models, but sample sizes at the subgroup-level may be limited. We focus on the case in which subgroup-specific models may be expected to be similar but not necessarily identical. Our approach is to treat subgroups as related problem instances and jointly estimate subgroup-specific regression coefficients. This is done in a penalized framework, combining an $\\ell_1$ term with an additional term that penalizes differences between subgroup-specific coefficients. This gives solutions that are globally sparse but that allow information-sharing between the subgroups. We present algorithms for estimation and empirical results on simulated data and using Alzheimer's disease, amyotrophic lateral sclerosis and cancer datasets. These examples demonstrate the gains our approach can offer in terms of prediction and the ability to estimate subgroup-specific sparsity patterns.",
+      "pdf_url": "https://arxiv.org/pdf/1611.00953v2"
+    },
+    {
+      "title": "Bayesian inference and role of astrocytes in amyloid-beta dynamics with modelling of Alzheimer's disease using clinical data",
+      "authors": [
+        "Hina Shaheen",
+        "Roderick Melnik",
+        "The Alzheimer's Disease Neuroimaging Initiative"
+      ],
+      "summary": "Alzheimer's disease (AD) is a prominent, worldwide, age-related neurodegenerative disease that currently has no systemic treatment. Strong evidence suggests that permeable amyloid-beta peptide (Abeta) oligomers, astrogliosis and reactive astrocytosis cause neuronal damage in AD. A large amount of Abeta is secreted by astrocytes, which contributes to the total Abeta deposition in the brain. This suggests that astrocytes may also play a role in AD, leading to increased attention to their dynamics and associated mechanisms. Therefore, in the present study, we developed and evaluated novel stochastic models for Abeta growth using ADNI data to predict the effect of astrocytes on AD progression in a clinical trial. In the AD case, accurate prediction is required for a successful clinical treatment plan. Given that AD studies are observational in nature and involve routine patient visits, stochastic models provide a suitable framework for modelling AD. Using the approximate Bayesian computation (ABC) approach, the AD etiology may be modelled as a multi-state disease process. As a result, we use this approach to examine the weak and strong influence of astrocytes at multiple disease progression stages using ADNI data from the baseline to 2-year visits for AD patients whose ages ranged from 50 to 90 years. Based on ADNI data, we discovered that the strong astrocyte effect (i.e., a higher concentration of astrocytes as compared to Abeta) could help to lower or clear the growth of Abeta, which is a key to slowing down AD progression.",
+      "pdf_url": "https://arxiv.org/pdf/2306.12520v1"
+    },
+    {
+      "title": "Diagnosis of Alzheimer's Disease via Multi-modality 3D Convolutional Neural Network",
+      "authors": [
+        "Yechong Huang",
+        "Jiahang Xu",
+        "Yuncheng Zhou",
+        "Tong Tong",
+        "Xiahai Zhuang",
+        "the Alzheimer's Disease Neuroimaging Initiative"
+      ],
+      "summary": "Alzheimer's Disease (AD) is one of the most concerned neurodegenerative diseases. In the last decade, studies on AD diagnosis attached great significance to artificial intelligence (AI)-based diagnostic algorithms. Among the diverse modality imaging data, T1-weighted MRI and 18F-FDGPET are widely researched for this task. In this paper, we propose a novel convolutional neural network (CNN) to fuse the multi-modality information including T1-MRI and FDG-PDT images around the hippocampal area for the diagnosis of AD. Different from the traditional machine learning algorithms, this method does not require manually extracted features, and utilizes the stateof-art 3D image-processing CNNs to learn features for the diagnosis and prognosis of AD. To validate the performance of the proposed network, we trained the classifier with paired T1-MRI and FDG-PET images using the ADNI datasets, including 731 Normal (NL) subjects, 647 AD subjects, 441 stable MCI (sMCI) subjects and 326 progressive MCI (pMCI) subjects. We obtained the maximal accuracies of 90.10% for NL/AD task, 87.46% for NL/pMCI task, and 76.90% for sMCI/pMCI task. The proposed framework yields comparative results against state-of-the-art approaches. Moreover, the experimental results have demonstrated that (1) segmentation is not a prerequisite by using CNN, (2) the hippocampal area provides enough information to give a reference to AD diagnosis. Keywords: Alzheimer's Disease, Multi-modality, Image Classification, CNN, Deep Learning, Hippocampal",
+      "pdf_url": "https://arxiv.org/pdf/1902.09904v1"
+    }
+  ]
+}
