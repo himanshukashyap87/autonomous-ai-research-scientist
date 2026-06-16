@@ -14,7 +14,7 @@ Given a research topic, the system can:
 2. Download and process research papers.
 3. Generate concise research summaries.
 4. Identify limitations and research gaps.
-5. Propose novel research hypotheses.
+5. Propose research hypotheses.
 6. Design experiments to validate hypotheses.
 7. Generate structured research reports.
 
